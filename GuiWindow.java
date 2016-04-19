@@ -1,32 +1,39 @@
 import javax.swing.*;
-import java.awt.Color;
 import java.awt.event.*;
-public class GuiWindow extends JFrame implements ActionListener{
-  public GuiWindow(String title){
-    super(title);
-    setBounds(20,50,200,100);
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-  }
-  public void setBounds(int tl, int tr, int bl, int br){
-    this.setBounds(tl, tr, bl, br);
-  }
-  public void initMenu(){
-    JMenuBar menu = new JMenuBar();
-    this.setJMenuBar(menu);
-    JMenu file = new JMenu("File");
-    JMenuItem open = new JMenuItem("Open");
-    JMenuItem quit = new JMenuItem("Quit");
-    quit.addActionListener(this);
-    menu.add(file);
-    menu.add(open);
-  }
-  public void actionPerformed(ActionEvent ae){
-    String choice = ae.getActionCommand();
-    if(choice.equals("Quit")) {
-      System.exit(0);
-    }
-    else if(choice.equals("Open")) {
-
-    }
-  }
+class Project3 extends JFrame implements ActionListener {
+   public Project3(String title) {
+      super(title);
+      setBounds(40,40,600,480);
+      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      JMenuBar menuBar = new JMenuBar();
+      setJMenuBar(menuBar);
+      JMenu file = new JMenu("File");
+      JMenuItem open = new JMenuItem("Open");
+      open.addActionListener(this);
+      file.add(open);
+      JMenuItem save = new JMenuItem("Save");
+      save.addActionListener(this);
+      file.add(save);
+      JMenuItem quit = new JMenuItem("Quit");
+      quit.addActionListener(this);
+      file.add(quit);
+      menuBar.add(file);
+      JMenu view = new JMenu("View");
+   }
+   public static void main(String[] args) {
+      Project3 myApp = new Project3("Project3");
+      myApp.setVisible(true);
+   }
+   public void actionPerformed(ActionEvent ae) {
+      String choice = ae.getActionCommand();
+      if (choice.equals("Open")) {
+         JOptionPane.showMessageDialog(this,"You clicked Open");
+      }
+      else if (choice.equals("Save")) {
+         JOptionPane.showMessageDialog(this,"You clicked Save");
+      }
+      else if (choice.equals("Quit")) {
+         System.exit(0);
+      }
+   }
 }

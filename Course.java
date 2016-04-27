@@ -2,13 +2,16 @@ public class Course{
   private String name;
   private String instructor;
   private int courseNumber;
-  private double credits;
+  private double credit;
 
   public Course(String n, String ins, int crn, double crd) {
     name = n;
     instructor = ins;
     courseNumber = crn;
-    credits = crd;
+    credit = crd;
+  }
+  public Course(){
+    this("","",0,0.0);
   }
 
   public String getCourseName() {
@@ -24,7 +27,7 @@ public class Course{
   }
 
   public double getCourseCredit() {
-    return credits;
+    return credit;
   }
 
   public void setName(String n){
@@ -39,16 +42,16 @@ public class Course{
       instructor = "N/A";
     }
   }
-  public void setCrn(int crn){
+  public void setCourseNumber(int crn){
     courseNumber = crn;
     if(courseNumber < 0){
       courseNumber = 0;
     }
   }
-  public void setCrdt(double crdt){
-    credits = crdt;
-    if(credits < 0){
-      credits = 0.0;
+  public void setCredit(double crdt){
+    credit = crdt;
+    if(credit < 0){
+      credit = 0.0;
     }
   }
 
@@ -57,7 +60,7 @@ public class Course{
     temp += name + ", ";
     temp += instructor + ", ";
     temp += courseNumber + ", ";
-    temp += credits;
+    temp += credit;
     return temp;
   }
 
@@ -67,7 +70,7 @@ public class Course{
     temp += "        \"name\" : \"" + name + "\",\n";
     temp += "        \"instructor\" : \"" + instructor + "\",\n";
     temp += "        \"courseNumber\" : " + courseNumber + ",\n";
-    temp += "        \"credits\" : " + credits + "\n";
+    temp += "        \"credit\" : " + credit + "\n";
     temp += "      }";
     return temp;
   }
@@ -77,7 +80,7 @@ public class Course{
     temp += "       <name>" + name + "</name>\n";
     temp += "       <instructor>" + instructor + "</instructor>\n";
     temp += "       <courseNumber>" + courseNumber + "</courseNumber>\n";
-    temp += "       <credits>" + credits + "</credits>\n";
+    temp += "       <credit>" + credit + "</credit>\n";
     temp += "   </course>\n";
     return temp;
   }

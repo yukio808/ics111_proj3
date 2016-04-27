@@ -11,6 +11,10 @@ public class CourseList{
     courses.add(c);
   }
 
+  public ArrayList <Course> getCourses() {
+     return courses;
+  }
+
   public String toString(){
     String temp = "";
     temp += "[";

@@ -1,0 +1,29 @@
+{
+  "courses" : [
+      {
+        "name" : "Cent",
+        "instructor" : "Takebaya",
+        "courseNumber" : 92837,
+        "credit" : 123.0
+      },
+      {
+        "name" : "ICS",
+        "instructor" : "Akiyama",
+        "courseNumber" : 93842,
+        "credit" : 123.0
+      },
+      {
+        "name" : "Dmed",
+        "instructor" : "Akiyama",
+        "courseNumber" : 91028,
+        "credit" : 12.0
+      },
+      {
+        "name" : "jkhjk",
+        "instructor" : "jhgjhgjh",
+        "courseNumber" : 67567,
+        "credit" : 1.0
+      }
+   ]
+}
+
